@@ -1,1 +1,7 @@
-%h1 Hi
+%h1.title
+  %img(src="/static/images/bullets.png")
+  PartakeList
+
+%form(action="/create" method="POST")
+  %input.xlarge.url(placeholder="http://partake.in/events/xxxxxxxxxxxxx")
+  %input.btn.primary(type="submit" value="Create")
