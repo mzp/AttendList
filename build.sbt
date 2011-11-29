@@ -13,3 +13,5 @@ libraryDependencies += "net.databinder" %% "dispatch-oauth" % "0.8.6"
 libraryDependencies += "net.databinder" %% "dispatch-http" % "0.8.6"
 
 libraryDependencies +=  "javax.servlet" % "servlet-api" % "2.5"
+
+name := "PartakeList"
