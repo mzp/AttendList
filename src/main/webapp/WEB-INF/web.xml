@@ -5,7 +5,7 @@ PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
 <web-app>
   <filter>
     <filter-name>filter</filter-name>
-    <filter-class>MainPlan</filter-class>
+    <filter-class>org.codefirst.partakelist.MainPlan</filter-class>
   </filter>
   <filter-mapping>
     <filter-name>filter</filter-name>

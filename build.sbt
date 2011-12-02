@@ -6,11 +6,9 @@ libraryDependencies += "net.databinder" %% "unfiltered-filter" % "0.5.1"
 
 libraryDependencies += "net.databinder" %% "unfiltered-scalate" % "0.5.1"
 
-libraryDependencies += "net.databinder" %% "dispatch-core" % "0.8.6"
+libraryDependencies += "net.databinder" %% "dispatch-twitter" % "0.7.8"
 
-libraryDependencies += "net.databinder" %% "dispatch-oauth" % "0.8.6"
-
-libraryDependencies += "net.databinder" %% "dispatch-http" % "0.8.6"
+libraryDependencies += "nu.validator.htmlparser" % "htmlparser" % "1.2.1"
 
 libraryDependencies +=  "javax.servlet" % "servlet-api" % "2.5"
 
