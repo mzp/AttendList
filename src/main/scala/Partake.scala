@@ -23,15 +23,24 @@ object Html {
     parse(Source.fromURL(url, "UTF-8").mkString)
 }
 
-object Partake {
-  def load(url : String) = {
-    val html = Html.load(url)
-    val title = (html \\ "h1").firstOption.map(_.text.trim).getOrElse("")
-    val users = for { div   <-  html \\ "div"
-                      _   <- (div \ "@class") map { n => n.toString == "event-participants rad" }
-                      ul  <- (div \ "ul").firstOption.toList
-                      a   <- (ul \\ "a")filter { n => (n \ "@href").toString.contains("users") }
-                   } yield a.text.trim
-    (title, users)
-  }
+/** Partakeの情報をスクレイピングする */
+case class Partake(url : String) {
+  private val html =
+    Html.load(url)
+
+  private def guard(b : Boolean) =
+    if(b) List(()) else List()
+
+  /** イベントタイトル */
+  lazy val title =
+    (html \\ "h1").firstOption.map(_.text.trim).getOrElse("untitled")
+
+  /** イベント出席者(除く:補欠) */
+  lazy val users =
+    for { div <- html \\ "div"
+          _   <- guard { (div \ "@class").toString == "event-participants rad" }
+          ul  <- (div \ "ul").firstOption.toList
+          a   <- (ul \\ "a")
+          _   <- guard { (a \ "@href").toString.contains("users") }
+       } yield a.text.trim
 }
