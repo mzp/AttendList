@@ -1,7 +1,13 @@
-%h1.title
-  %img(src="/static/images/bullets.png")
-  PartakeList
+.hero-unit
+  %h1.title
+    AttendList
+    %small
+      イベント参加者をTwitterリストへ
+  %p
+    <span class="title">AttendList</span>は<a href="http://partake.in">Partake</a>で作成したイベントから、参加者のTwitterリストを作成するWebサービスです。
 
+%h2 リストの作成
 %form(action="/create" method="POST")
   %input.xlarge.url(placeholder="http://partake.in/events/xxxxxxxxxxxxx" name="url")
   %input.btn.primary(type="submit" value="Create")
+

@@ -1,19 +1,11 @@
 .title {
-    text-align: center;
-    font-size: 64px;
     font-family: Arial, Helvetica, sans-serif;
-    margin-top: 50px;
-    margin-bottom: 50px;
     font-variant: small-caps;
 }
 
 .credits {
     border-top: 1px solid #eee;
     padding-top: 10px;
-    text-align: center;
-}
-
-form {
     text-align: center;
 }
 

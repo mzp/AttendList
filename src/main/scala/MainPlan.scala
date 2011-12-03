@@ -81,7 +81,7 @@ class MainPlan extends unfiltered.filter.Plan {
       case Path(Seg("static" :: _)) | Path("/favicon.ico") =>
         Pass
       case Path("/") =>
-        Ok ~> Scalate(request, "index.scaml", "title" -> "PartakeList")
+        Ok ~> HtmlContent ~> Scalate(request, "index.scaml", "title" -> "AttendList")
       case Path(Seg("callback" :: _)) & Params(params) =>
         callback(params)
       case Path("/create") & Params(params) =>
